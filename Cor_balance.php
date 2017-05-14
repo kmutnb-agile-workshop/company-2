@@ -1,3 +1,9 @@
+<?php
+require "./src/User.php";
+
+$user = new User();
+$ObjUser = $user->getUserInfo($_GET['id']);
+?>
 <!DOCTYPE html>
 
 <html>
@@ -27,18 +33,16 @@
 <div class="row">
 <div class="col-md-6">
 	<div class="alert alert-success">
-		<div class="row">
-			<div class="col-md-2">ชื่อ : </div>
-			<div class="col-md-3">aaaaaaaaa</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2">นามสกุล : </div>
-			<div class="col-md-3">aaaaaaaaa</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2">เบอร์โทร : </div>
-			<div class="col-md-3">aaaaaaaaa</div>
-		</div>
+		<?php foreach($ObjUser as $u) { ?>
+			<div class="row">
+				<div class="col-md-2">ชื่อ : </div>
+				<div class="col-md-3"><?=$u[1]?> <?=$u[2]?></div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">เบอร์โทร : </div>
+				<div class="col-md-3"><?=$u[3]?></div>
+			</div>
+		<?php } ?>
 	</div>
 </div>
 </div>
@@ -46,7 +50,7 @@
 <div class="row">
 <div class="col-md-6">
 		<div class="alert alert-success" align="center"><strong>ยอดเงินคงเหลือ (บาท)</strong>
-		<div align="center">1,000.00</div>
+		<div align="center"><?=$u[4]?></div>
 		</div>
 </div>
 

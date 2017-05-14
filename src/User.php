@@ -12,4 +12,10 @@ final class User {
       }
   }
 
+  public function getUserInfo($_id){
+      $db = DbConnection::getConnection();
+      $rs = $db->Execute("SELECT * FROM user Where id = ".$_id);
+      return $rs;
+  }
+
 }
