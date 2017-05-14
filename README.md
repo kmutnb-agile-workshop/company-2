@@ -1,3 +1,3 @@
 # Agile Starter - PHP
 
-See document here https://goo.gl/wdRZ2g
+อ่านรายละเอียดที่นี่ >> https://goo.gl/wdRZ2g
