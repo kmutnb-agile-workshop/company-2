@@ -8,7 +8,7 @@ final class User {
       $db = DbConnection::getConnection();
       $rs = $db->Execute("UPDATE user SET Balance = Balance + ".(int)$amount." WHERE Tel='".$tel."'");
       if($rs){
-        echo " การเติมเงินเสร็จสมบูรณ์";
+        return " การเติมเงินเสร็จสมบูรณ์";
       }
   }
 
