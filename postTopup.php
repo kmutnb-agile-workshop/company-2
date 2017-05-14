@@ -1,5 +1,5 @@
 <?php
-require "./src/User";
+require "./src/User.php";
 
    $user = new User();
-   echo $user->topup($_POST['tel'],$_POST['amount']);
+   $user->topup($_POST['tel'],$_POST['amount']);
